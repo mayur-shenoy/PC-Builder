@@ -1,0 +1,355 @@
+/**
+ * BuildSummary Component Styles
+ */
+
+.build-summary {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+    /* Changed from white to transparent to show app background */
+}
+
+/* Glass Card Container replacement for section styles */
+.summary-header,
+.summary-section,
+.purchase-links-note {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.summary-header:hover,
+.summary-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.summary-header {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.summary-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+}
+
+.total-cost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: #f7fafc;
+    padding: 1rem 2rem;
+    border-radius: 99px;
+    display: inline-flex;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cost-label {
+    color: #718096;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.cost-value {
+    color: #27ae60;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+}
+
+/* Summary Sections */
+.summary-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Remove colored left borders, rely on header icons/colors */
+.summary-section {
+    border-left: none;
+}
+
+/* Explanation Section */
+.build-explanation {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* Strengths Section */
+.strengths-list,
+.weaknesses-list,
+.tradeoffs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.strength-item,
+.weakness-item,
+.tradeoff-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.strength-icon {
+    color: #48BB78;
+    font-size: 1.5rem;
+}
+
+.weakness-icon {
+    color: #ED8936;
+    font-size: 1.5rem;
+}
+
+.tradeoff-icon {
+    color: #4299E1;
+    font-size: 1.5rem;
+}
+
+.strength-text,
+.weakness-text,
+.tradeoff-text {
+    color: #4a5568;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Upgrades Section */
+.upgrades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.upgrade-item {
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.upgrade-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.upgrade-component {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #2d3748;
+}
+
+.upgrade-priority {
+    padding: 0.35rem 1rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.upgrade-priority.priority-high {
+    background: #FFF5F5;
+    color: #E53E3E;
+}
+
+.upgrade-priority.priority-medium {
+    background: #FFFAF0;
+    color: #DD6B20;
+}
+
+.upgrade-priority.priority-low {
+    background: #F7FAFC;
+    color: #718096;
+}
+
+/* Components Section */
+.components-list {
+    gap: 1rem;
+}
+
+.component-row {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    background: #ffffff;
+    border-radius: 12px;
+    align-items: center;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.component-row:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.component-type {
+    font-weight: 600;
+    color: #718096;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.component-name {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.component-price {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 1.1rem;
+    background: #F0FFF4;
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    color: #276749;
+}
+
+/* Purchase Links Note */
+.purchase-links-note {
+    background: #EBF8FF;
+    color: #2C5282;
+}
+
+.api-note strong {
+    color: #2B6CB0;
+}
+
+/* Actions */
+.summary-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.action-button {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.new-build-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.new-build-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.download-button {
+    background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+    color: white;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .build-summary {
+        padding: 1rem;
+    }
+
+    .summary-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .total-cost {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .strengths-list,
+    .weaknesses-list,
+    .tradeoffs-list {
+        grid-template-columns: 1fr;
+    }
+
+    .component-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        background: #f8fafc;
+    }
+
+    .component-type {
+        color: #667eea;
+    }
+
+    .component-price {
+        justify-self: start;
+        display: inline-block;
+    }
+
+    .upgrade-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

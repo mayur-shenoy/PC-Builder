@@ -1,0 +1,309 @@
+/**
+ * BuildWizard Styles
+ * Requirements: 2.3
+ */
+
+.build-wizard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+/* Step Indicator */
+.step-indicator {
+    margin-bottom: var(--spacing-2xl);
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.step-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    color: #1A202C;
+    letter-spacing: -0.025em;
+}
+
+.step-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--spacing-xs);
+    padding: 0 var(--spacing-xl);
+}
+
+.step-progress::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 60px;
+    right: 60px;
+    height: 4px;
+    background: #E2E8F0;
+    z-index: 0;
+    border-radius: 2px;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #A0AEC0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.step-item.active .step-number {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+    box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.2);
+    transform: scale(1.1);
+}
+
+.step-item.completed .step-number {
+    background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+    border-color: #48BB78;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #718096;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.step-item.active .step-label {
+    color: #667eea;
+}
+
+.step-item.completed .step-label {
+    color: #38A169;
+}
+
+/* Main Content Area */
+.wizard-content {
+    flex: 1;
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+}
+
+.wizard-top-panel {
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+}
+
+.wizard-bottom-panel {
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wizard-main-panel,
+.metrics-section,
+.visual-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.wizard-main-panel {
+    /* No restrictive max-width to allow full expansion */
+    width: 100%;
+}
+
+.metrics-section {
+    /* Style for top bar metrics */
+    width: 100%;
+}
+
+.visual-section {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.content-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #718096;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Navigation Controls */
+.wizard-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.back-button {
+    background: #E2E8F0;
+    color: #4A5568;
+}
+
+.back-button:hover:not(:disabled) {
+    background: #CBD5E0;
+    color: #2D3748;
+    transform: translateX(-2px);
+}
+
+.next-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+}
+
+.next-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(102, 126, 234, 0.4);
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.nav-info {
+    flex: 1;
+    text-align: center;
+}
+
+.selection-status {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4A5568;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .wizard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .wizard-right-panel {
+        display: none;
+        /* Might want to hide supplemental info on intermediate tablets or stack it */
+    }
+}
+
+@media (max-width: 768px) {
+    .build-wizard {
+        padding: 1rem;
+    }
+
+    .wizard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .wizard-right-panel {
+        display: block;
+        /* Show stacked on mobile if needed, or hide */
+        order: -1;
+        /* Put stats on top or bottom? */
+    }
+
+    .step-indicator {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .step-progress::before {
+        left: 40px;
+        right: 40px;
+        top: 20px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-width: 2px;
+    }
+
+    .step-label {
+        font-size: 0.7rem;
+        display: none;
+        /* Hide labels on very small screens? */
+    }
+
+    .step-item.active .step-label {
+        display: block;
+        /* Show active label */
+    }
+
+    .wizard-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
